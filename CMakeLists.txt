@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.24)
 
 project(riva_asrlib LANGUAGES CUDA CXX)
 
@@ -179,7 +179,7 @@ target_compile_features(riva_asrlib_wfst_decoder PUBLIC cxx_std_17
   PUBLIC cuda_std_17)
 target_link_libraries(riva_asrlib_wfst_decoder
   PUBLIC Threads::Threads
-  PRIVATE CUDA::nvtx3
+# PRIVATE CUDA::nvtx3
   PUBLIC riva_asrlib_openfst)
 # target_link_options(riva_asrlib_wfst_decoder PRIVATE -Wl,--no-undefined)
 target_compile_options(riva_asrlib_wfst_decoder PUBLIC -Wno-unused-but-set-variable -ffunction-sections -fdata-sections)
